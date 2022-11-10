@@ -2,7 +2,9 @@
 {
     private int N;
 
-    public int NdeAndares
+    public Pyramid(int numberOfFloors) => NumbersofFloors = numberOfFloors;
+
+    public int NumbersofFloors
     {
         get
         {
@@ -34,8 +36,7 @@
 
     public static void Main()
     {
-        Pyramid pyramid = new Pyramid();
-        pyramid.N = 6;
+        Pyramid pyramid = new(10);
         pyramid.BuildPyramid();
 
     }
