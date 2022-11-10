@@ -12,7 +12,6 @@
         {
             if (value > 0)
                 N = value;
-            else Console.WriteLine("Favor inserir um valor válido maior que zero!");
         }
     }
 
