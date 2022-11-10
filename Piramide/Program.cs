@@ -16,7 +16,7 @@
         }
     }
 
-    public static void BuildPyramid(int N)
+    public void BuildPyramid()
     {
             for (int i = 1; i <= N; i++)
             {
@@ -36,7 +36,8 @@
     public static void Main()
     {
         Pyramid pyramid = new Pyramid();
-        Pyramid.BuildPyramid(8);
+        pyramid.N = 6;
+        pyramid.BuildPyramid();
 
     }
 
