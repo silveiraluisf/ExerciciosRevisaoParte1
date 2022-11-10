@@ -1,23 +1,20 @@
-﻿using System;
-using System.Globalization;
-
-class Piramide
+﻿class Pyramid
 {
- //   private int N;
+    private int N;
 
-    //public int NdeAndares
-    //{
-      //  get
-        //{
-          //  return N;
-        //}
-        //set
-        //{
-          //  if (value > 0)
-            //    N = value;
-            //else Console.WriteLine("Favor inserir um valor válido maior que zero!");
-       // }
-   // }
+    public int NdeAndares
+    {
+        get
+        {
+            return N;
+        }
+        set
+        {
+            if (value > 0)
+                N = value;
+            else Console.WriteLine("Favor inserir um valor válido maior que zero!");
+        }
+    }
 
     public static void BuildPyramid(int N)
     {
@@ -34,12 +31,13 @@ class Piramide
                     Console.Write(Number);
                 Console.WriteLine();
             }
-            //Console.ReadLine();
         }
 
     public static void Main()
     {
-        BuildPyramid(4);
+        Pyramid pyramid = new Pyramid();
+        Pyramid.BuildPyramid(8);
+
     }
 
 }
