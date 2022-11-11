@@ -2,9 +2,9 @@
 {
     private int N;
 
-    public Pyramid(int numberOfFloors) => NumbersofFloors = numberOfFloors;
+    public Pyramid(int numberOfFloors) => NumbersOfFloors = numberOfFloors;
 
-    public int NumbersofFloors
+    public int NumbersOfFloors
     {
         get
         {

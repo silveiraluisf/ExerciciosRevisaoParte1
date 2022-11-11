@@ -1,9 +1,9 @@
-﻿class Vertice {
+﻿class Vertex {
 
     private int X;
     private int Y;
 
-    public Vertice(int coordinateX, int coordinateY)
+    public Vertex(int coordinateX, int coordinateY)
     {
         CoordinateX = coordinateX;
         CoordinateY = coordinateY;
@@ -16,7 +16,7 @@
         }
         set 
         {
-            value = X; 
+            X = value; 
         } 
     }
 
@@ -28,13 +28,15 @@
         }
         set
         {
-            value = Y;
+            Y = value;
         }
     }
 
-    public void Distance()
+    static public void Distance(Vertex A, Vertex B)
     {
-        Console.WriteLine("A distância é: ");
+        int distante = A.CoordinateX - B.CoordinateX;    
+        Console.WriteLine($"A distância é: {distante} ");
+
     }
 
     public void Move()
@@ -45,5 +47,8 @@
     static void Main()
     {
         Console.WriteLine("Programa vertice");
+        Vertex vertexA = new(4, 5);
+        Vertex vertexB = new(3, 6);
+        Vertex.Distance(vertexA, vertexB);
     }
 }
