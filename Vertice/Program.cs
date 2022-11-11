@@ -14,7 +14,7 @@
         {
             return X;
         }
-        set 
+        private set 
         {
             X = value; 
         } 
@@ -26,7 +26,7 @@
         {
             return Y;
         }
-        set
+        private set
         {
             Y = value;
         }
@@ -34,15 +34,19 @@
 
     static public void Distance(Vertex A, Vertex B)
     {
-        //d (P, Q) = √ ((XQ - XP) ^ 2 + (YQ - YP) ^ 2)
+        //formula: d (P, Q) = √ ((XQ - XP) ^ 2 + (YQ - YP) ^ 2)
         double distante = Math.Sqrt(Math.Pow((A.CoordinateX - B.CoordinateX), 2) + Math.Pow((A.CoordinateY - B.CoordinateY), 2));    
         Console.WriteLine($"A distância entre o vértice A e B é de {distante} unidade(s) de medida");
 
     }
 
-    public void Move()
+    static public void Move(Vertex A, Vertex B)
     {
+        Console.WriteLine($"Posição atual do vértice = {A.CoordinateX} , {A.CoordinateY}");
+        A.CoordinateX = B.CoordinateX;
+        A.CoordinateY = B.CoordinateY;
         Console.WriteLine("Moveu!");
+        Console.WriteLine($"Nova posiçã do vértice = {A.CoordinateX} , {A.CoordinateY}");
     }
 
     static void Main()
@@ -50,6 +54,9 @@
         Console.WriteLine("Programa vertice");
         Vertex vertexA = new(4, 5);
         Vertex vertexB = new(2, 3);
+        Console.WriteLine("Função que calcula a distância entre dois vértices:");
         Vertex.Distance(vertexA, vertexB);
+        Console.WriteLine("Função que move a posição de um vértice:");
+        Vertex.Move(vertexA, vertexB);
     }
 }
