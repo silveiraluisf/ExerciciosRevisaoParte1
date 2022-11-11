@@ -42,7 +42,7 @@
         Console.WriteLine("Moveu!");
     }
 
-    public void Main()
+    static void Main()
     {
         Console.WriteLine("Programa vertice");
     }
