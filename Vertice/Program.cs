@@ -49,6 +49,11 @@
         Console.WriteLine($"Nova posiçã do vértice = {A.CoordinateX} , {A.CoordinateY}");
     }
 
+    static public void IsEqual(Vertex A, Vertex B)
+    {
+        Console.WriteLine(A == B);
+    }
+
     static void Main()
     {
         Console.WriteLine("Programa vertice");
@@ -58,5 +63,7 @@
         Vertex.Distance(vertexA, vertexB);
         Console.WriteLine("Função que move a posição de um vértice:");
         Vertex.Move(vertexA, vertexB);
+        Console.WriteLine("Função que verifica se dois vértices são iguais:");
+        Vertex.IsEqual(vertexA, vertexB);
     }
 }
