@@ -1,15 +1,9 @@
 ﻿namespace Vertice
 {
-    internal class Vertex
+    public class Vertex
     {
         private int _X;
         private int _Y;
-
-        public Vertex(int coordinateX, int coordinateY)
-        {
-            CoordinateX = coordinateX;
-            CoordinateY = coordinateY;
-        }
 
         public int CoordinateX
         {
@@ -21,6 +15,12 @@
         {
             get { return _Y; }
             private set { _Y = value; }
+        }
+
+        public Vertex(int coordinateX, int coordinateY)
+        {
+            _X = coordinateX;
+            _Y = coordinateY;
         }
 
         static public double Distance(Vertex A, Vertex B)

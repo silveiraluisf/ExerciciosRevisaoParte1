@@ -1,59 +1,70 @@
-﻿using static Calculations.Vertex; 
+﻿using Vertice;
 
-class Triangle
+namespace Triangulo
 {
-    private Calculations.Vertex A;
-    private Calculations.Vertex B;
-    private Calculations.Vertex C;
-    private double P;
-    private double Ar;
-    private Type T; 
+    public class Triangle
+     {
+        private Vertex _A;
+        private Vertex _B;
+        private Vertex _C;
 
-    public Triangle(Calculations.Vertex A, Calculations.Vertex B, Calculations.Vertex C, double perimeter, double area) 
-    {
-        VertexA = A;
-        VertexB = B;
-        VertexC = C;
-        Perimeter = perimeter;
-        Area = area;
-    }
+        public Vertex VertexA
+        {
+            get { return _A; }
+            set { _A = value; }
+        }
+        public Vertex VertexB
+        {
+            get { return _B; }
+            set { _B = value; }
+        }
+        public Vertex VertexC
+        {
+            get { return _C; }
+            set { _C = value; }
+        }
 
-    public Calculations.Vertex VertexA
-    {
-        get { return VertexA;}
-        set { VertexA = value; }
-    }
-    public Calculations.Vertex VertexB
-    {
-        get { return VertexB; }
-        set { VertexB = value; }
-    }
-    public Calculations.Vertex VertexC
-    {
-        get { return VertexC;}
-        set { VertexC = value; }
-    }
+        public double D1
+        {
+            get { return Vertex.Distance(_A, _B); }
+        }
 
-    public double Perimeter
-    {
-        get { return Perimeter; }
-        set { Perimeter = value; }
-    }
+        public double D2
+        {
+            get { return Vertex.Distance(_A, _C); }
+        }
 
-    public double Area
-    {
-        get { return Area; }
-        set { Area = value; }
-    }
+        public double D3
+        {
+            get { return Vertex.Distance(_B, _C); }
+        }
 
-    static public bool IsEqual(Triangle a, Triangle b)
-    {
-        return a == b;
-    }
+        public double Perimeter
+        {
+            get { return D1 + D2 + D3; }    
+        }
 
-    static public double CalculatePerimeter(Calculations.Vertex A, Calculations.Vertex B, Calculations.Vertex C) 
-    {
-        double P = (Calculations.Vertex.Distance(A, B) + Calculations.Vertex.Distance(A, C) + Calculations.Vertex.Distance(B, C));
-        return P;
-    }
+        public double Area
+        {
+            get { return Math.Sqrt(Perimeter / 2 * (Perimeter / 2 - D1) * (Perimeter / 2 - D2) * (Perimeter / 2 - D3)); }           
+        }
+
+        public Triangle(Vertex vertexA, Vertex vertexB, Vertex vertexC)
+        {
+            _A = vertexA;
+            _B = vertexB;
+            _C = vertexC;
+        }
+
+        static public bool IsEqual(Triangle a, Triangle b)
+            {
+                return a == b;
+            }
+
+        static public double CalculatePerimeter(Vertice.Vertex A, Vertice.Vertex B, Vertice.Vertex C)
+        {
+            double P = (Vertice.Vertex.Distance(A, B) + Vertice.Vertex.Distance(A, C) + Vertice.Vertex.Distance(B, C));
+            return P;
+        }
+     }
 }
