@@ -32,26 +32,28 @@
         }
     }
 
-    static public void Distance(Vertex A, Vertex B)
+    static public double Distance(Vertex A, Vertex B)
     {
         //formula: d (P, Q) = √ ((XQ - XP) ^ 2 + (YQ - YP) ^ 2)
         double distante = Math.Sqrt(Math.Pow((A.CoordinateX - B.CoordinateX), 2) + Math.Pow((A.CoordinateY - B.CoordinateY), 2));    
         Console.WriteLine($"A distância entre o vértice A e B é de {distante} unidade(s) de medida");
-
+        return distante;
     }
 
-    static public void Move(Vertex A, Vertex B)
+    static public Vertex Move(Vertex A, Vertex B)
     {
         Console.WriteLine($"Posição atual do vértice = {A.CoordinateX} , {A.CoordinateY}");
         A.CoordinateX = B.CoordinateX;
         A.CoordinateY = B.CoordinateY;
         Console.WriteLine("Moveu!");
         Console.WriteLine($"Nova posiçã do vértice = {A.CoordinateX} , {A.CoordinateY}");
+        return A;
     }
 
-    static public void IsEqual(Vertex A, Vertex B)
+    static public bool IsEqual(Vertex A, Vertex B)
     {
         Console.WriteLine(A == B);
+        return (A == B);
     }
 
     static void Main()
