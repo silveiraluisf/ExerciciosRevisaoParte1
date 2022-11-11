@@ -54,6 +54,9 @@ namespace Triangulo
         {
             get
             {
+                if (D1 == D2 && D2 == D3) { T = TriangleTypes.Equilatero; }
+                if (D1 == D2 || D2 == D3 || D3 == D1) { T = TriangleTypes.Isoseles; }
+                else T = TriangleTypes.Escaleno;
                 return T;
             }
         }
@@ -68,13 +71,6 @@ namespace Triangulo
         static public bool IsEqual(Triangle T1, Triangle T2)
         {
             return (T1.VertexA == T2.VertexA && T1.VertexB == T2.VertexB && T1.VertexC == T2.VertexC);
-        }
-
-        public void DefineTriangleType()
-        {
-            if (D1 == D2 && D2 == D3) { T = TriangleTypes.Equilatero; }
-            if (D1 == D2 || D2 == D3 || D3 == D1) { T = TriangleTypes.Isoseles; }
-            else T = TriangleTypes.Escaleno;      
         }
     }
 
