@@ -11,9 +11,9 @@ namespace ListaIntervalos
             get { return _L; }
             set { _L = value; }
         }
-        public TimeIntervalsList(List<TimeInterval> TimeLIst) 
+        public TimeIntervalsList(List<TimeInterval> TimeList) 
         {
-            _L = TimeLIst;
+            _L = TimeList;            
         }
 
         public void AddInterval(TimeInterval A)
@@ -28,9 +28,10 @@ namespace ListaIntervalos
             _L.Add(A);
         }
 
-        public void PrintList(List<TimeInterval> _L)
+        public void PrintList(List<TimeInterval> L)
         {
-            foreach (TimeInterval A in _L)
+            L = _L.OrderBy(e => e.InicialDate).ToList();
+            foreach (TimeInterval A in L)
             {
                 Console.WriteLine($"{A.InicialDate} , {A.FinalDate}");
             }
