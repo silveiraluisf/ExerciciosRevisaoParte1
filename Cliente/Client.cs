@@ -11,33 +11,33 @@
 
         public string Name
         {
-            get;
-            private set;
+            get { return _Name; }
+            private set { _Name = value; }
         }
         public long CPF
         {
-            get;
-            private set;
+            get { return _CPF; }
+            private set { _CPF = value; }
         }
         public DateTime BornDate
         {
-            get;
-            private set;
+            get { return _BornDate; }
+            private set { _BornDate = value; }
         }
         public float MonthlyIncome
         {
-            get;
-            private set;
+            get { return _MonthlyIncome; }
+            private set { _MonthlyIncome = value; }
         }
         public char MaritalStatus
         {
-            get;
-            private set;
+            get { return _MaritalStatus; }
+            private set { _MaritalStatus = value; }
         }
         public int NumberOfDependents
         {
-            get;
-            private set;
+            get { return _NumberOfDependents; }
+            private set { _NumberOfDependents = value; }
         }
 
 
