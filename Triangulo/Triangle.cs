@@ -71,9 +71,8 @@ namespace Triangulo
         }
 
         static public bool IsEqual(Triangle T1, Triangle T2)
-        {
-            //T1.VertexA == T2.VertexA && T1.VertexB == T2.VertexB && T1.VertexC == T2.VertexC
-            return (T1.Equals(T2));
+        {         
+            return T1.VertexA == T2.VertexA && T1.VertexB == T2.VertexB && T1.VertexC == T2.VertexC;
         }
 
         public void ValidateTraingle()

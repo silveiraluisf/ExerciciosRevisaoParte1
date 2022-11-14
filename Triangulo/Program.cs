@@ -6,9 +6,9 @@ namespace Triangulo
     {
         static void Main()
         {
-            Vertex vertexA = new(1, 1);
-            Vertex vertexB = new(1, 1);
-            Vertex vertexC = new(1, 1);
+            Vertex vertexA = new(1, 5);
+            Vertex vertexB = new(3, 10);
+            Vertex vertexC = new(2, 4);
             
             Triangle triangleA = new(vertexA, vertexB, vertexC);
             Triangle triangleB = new(vertexA, vertexB, vertexC);

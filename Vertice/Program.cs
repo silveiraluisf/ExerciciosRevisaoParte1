@@ -2,7 +2,7 @@
     public class Program {
         static void Main()
         {
-            Vertex vertexA = new(-4, 5);
+            Vertex vertexA = new(2, 3);
             Vertex vertexB = new(2, 3);
             Console.WriteLine("Programa vertice");
             Console.WriteLine($"Primeiro vértice: {vertexA.CoordinateX} {vertexA.CoordinateY}");           

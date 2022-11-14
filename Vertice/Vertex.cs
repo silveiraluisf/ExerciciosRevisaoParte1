@@ -39,8 +39,7 @@
 
         static public bool IsEqual(Vertex A, Vertex B)
         {
-            //Console.WriteLine(A.CoordinateX == B.CoordinateX && A.CoordinateY == B.CoordinateY);
-            return (A.Equals(B));
+            return A.CoordinateX == B.CoordinateX && A.CoordinateY == B.CoordinateY;
         }
     }
 }

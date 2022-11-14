@@ -29,7 +29,7 @@ namespace Poligono
         {
             foreach (Vertex vertex in _V) 
             { 
-                if (vertex.Equals(A)) 
+                if (Vertex.IsEqual(vertex, A)) 
                     return false; 
             }
             _V.Add(A);
@@ -38,14 +38,15 @@ namespace Poligono
 
         public bool RemoveVertex(Vertex R)
         {
-            if (_V.Count <= 3)
-                throw new Exception("O polígono deve possuir mais de 3 vértices!");
-            foreach (Vertex vertex in _V)
-            {
-                if (vertex.Equals(R))
-                    _V.Remove(R);
-            } 
-            return true;
+            if (_V.Count <= 3) throw new Exception("O polígono não pode ter menos de 3 lados");
+                for (int i = 0; i < _V.Count; i++)
+                {
+                    Vertex vertex = _V[i];
+                    if (Vertex.IsEqual(vertex, R))
+                        _V.Remove(vertex);          
+                }
+
+                return true;
         }
 
         public object CalculatePerimeter()
