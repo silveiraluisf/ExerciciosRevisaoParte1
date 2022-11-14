@@ -9,14 +9,14 @@ namespace Poligono
             Vertex vertexA = new(1, 5);
             Vertex vertexB = new(3, 10);
             Vertex vertexC = new(2, 4);
-            //Vertex vertexD = new(1, 8);
+            Vertex vertexD = new(1, 8);
 
             List<Vertex> vertices = new List<Vertex>() 
             { 
                 vertexA,
                 vertexB,
                 vertexC,
-                //vertexD
+                vertexD
             };
 
             Polygon polygonA = new(vertices);

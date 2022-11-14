@@ -51,18 +51,15 @@ namespace Poligono
 
         public double CalculatePerimeter()
         {
-            double Perimeter = 0;
-            for (int i = 0; i < _V.Count; i++)
-            {
-                for (int j = i + 1; j < _V.Count; j++)
-                {                   
-                    Vertex vertexA = _V[i];
-                    Vertex vertexB = _V[j];
-                    Perimeter += Vertex.Distance(vertexA, vertexB);
-                                     
-                }                                                                                                                    
-            }
-                     
+            Vertex vertexA = _V[_V.Count - 1];
+            Vertex vertexB = _V[0];
+            double Perimeter = Vertex.Distance(vertexA, vertexB);
+            for (int i = 0; i < _V.Count - 1; i++)
+            {                   
+                Vertex vertexC = _V[i];
+                Vertex vertexD = _V[i + 1];                
+                Perimeter += Vertex.Distance(vertexC, vertexD);                                                                                                                                                                     
+            }                     
             return Perimeter;
         }
     }
