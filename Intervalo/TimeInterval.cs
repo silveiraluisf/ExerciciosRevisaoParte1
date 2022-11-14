@@ -1,8 +1,6 @@
-﻿using System;
-
-namespace Intervalo
+﻿namespace Intervalo
 {
-    internal class TimeInterval
+    public class TimeInterval
     {
         private DateTime _I;
         private DateTime _F;
