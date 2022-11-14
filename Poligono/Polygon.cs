@@ -49,13 +49,15 @@ namespace Poligono
                 return true;
         }
 
-        public object CalculatePerimeter()
+        public double CalculatePerimeter()
         {
             double Perimeter = 0;
-            foreach (Vertex vertexA in _V)  foreach(Vertex vertexB in _V)
+            foreach (Vertex vertexA in _V) 
             {
-                Perimeter = Vertex.Distance(vertexA, vertexB);
-                    Perimeter++;
+                foreach (Vertex vertexB in _V)
+                {
+                    Perimeter += Vertex.Distance(vertexA, vertexB);                    
+                }
             }
                      
             return Perimeter;

@@ -54,14 +54,14 @@ namespace Poligono
             }
 
             //Teste do método de remover vértice com polígono com 3 vértices
-            Console.WriteLine($"Tentando remover o vértice {vertexD.CoordinateX} {vertexD.CoordinateY}");
-            Console.WriteLine($"Removeu? {polygonA.RemoveVertex(vertexD)}");
-            Console.WriteLine($"Tentando remover o vértice {vertexC.CoordinateX} {vertexC.CoordinateY}");
-            Console.WriteLine($"Removeu? {polygonA.RemoveVertex(vertexC)}");
-            foreach (Vertex vertex in vertices)
-            {
-                Console.WriteLine($"Vértice: {vertex.CoordinateX} {vertex.CoordinateY}");
-            }
+            //Console.WriteLine($"Tentando remover o vértice {vertexD.CoordinateX} {vertexD.CoordinateY}");
+            //Console.WriteLine($"Removeu? {polygonA.RemoveVertex(vertexD)}");
+            //Console.WriteLine($"Tentando remover o vértice {vertexC.CoordinateX} {vertexC.CoordinateY}");
+            //Console.WriteLine($"Removeu? {polygonA.RemoveVertex(vertexC)}");
+            //foreach (Vertex vertex in vertices)
+            //{
+            //    Console.WriteLine($"Vértice: {vertex.CoordinateX} {vertex.CoordinateY}");
+            //}
         }
     }
 }
