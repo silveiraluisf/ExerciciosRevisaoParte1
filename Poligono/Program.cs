@@ -11,7 +11,7 @@ namespace Poligono
             Vertex vertexC = new(2, 4);
             Vertex vertexD = new(1, 8);
 
-            List<Vertex> vertices = new List<Vertex>() 
+            List<Vertex> vertices = new() 
             { 
                 vertexA,
                 vertexB,

@@ -19,7 +19,7 @@ namespace ListaIntervalos
             TimeInterval tempoB = new(c, d); 
             TimeInterval tempoC = new(e, f);
 
-            List<TimeInterval> list = new List<TimeInterval>()
+            List<TimeInterval> list = new()
             {
                 tempoA,
             };
