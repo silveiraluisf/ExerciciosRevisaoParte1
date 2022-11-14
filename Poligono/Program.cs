@@ -6,17 +6,17 @@ namespace Poligono
     {
         static void Main()
         {
-            Vertex vertexA = new(2, 3);
-            Vertex vertexB = new(4, 5);
-            Vertex vertexC = new(6, 7);
-            Vertex vertexD = new(1, 8);
+            Vertex vertexA = new(1, 5);
+            Vertex vertexB = new(3, 10);
+            Vertex vertexC = new(2, 4);
+            //Vertex vertexD = new(1, 8);
 
             List<Vertex> vertices = new List<Vertex>() 
             { 
                 vertexA,
                 vertexB,
                 vertexC,
-                vertexD
+                //vertexD
             };
 
             Polygon polygonA = new(vertices);

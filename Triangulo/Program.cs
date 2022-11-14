@@ -13,6 +13,7 @@ namespace Triangulo
             Triangle triangleA = new(vertexA, vertexB, vertexC);
             Triangle triangleB = new(vertexA, vertexB, vertexC);
 
+            Console.WriteLine(triangleA.Perimeter);
             Console.WriteLine(triangleA.Area);
             Console.WriteLine(triangleB.TriangleType);
             Console.WriteLine(Triangle.IsEqual(triangleA, triangleB));
