@@ -1,4 +1,6 @@
-﻿namespace Cliente
+﻿using Microsoft.VisualBasic;
+
+namespace Cliente
 {
     public class Client
     {
@@ -65,11 +67,21 @@
         {
             Console.WriteLine("Insira o CPF: ");
             string inputCPF = Console.ReadLine();
+            long outputCPF;
             switch (inputCPF.Length)
             {
                 case 11:
-                    C.CPF = Convert.ToInt64(inputCPF);
-                    C.CPF = _CPF;
+                    bool parseSuccess = long.TryParse(inputCPF, out outputCPF);
+                    if (parseSuccess)
+                    {
+                        CPF = Convert.ToInt64(inputCPF);
+                        C.CPF = _CPF;
+                    }
+                    else
+                    {
+                        Console.WriteLine("Favor insira um CPF válido (11 caracteres, apenas números).");
+                        CPFValidate(C);
+                    }
                     break;
                 default:
                     Console.WriteLine("Favor insira um CPF válido (11 caracteres, apenas números).");
@@ -88,47 +100,80 @@
         public void IncomeValidate(Client C)
         {
             Console.WriteLine("Insira a renda mensal: ");
-            C.MonthlyIncome = (float)Convert.ToDouble(Console.ReadLine());
-            //if (C.MonthlyIncome < DateTimeKind(1,1,2002)) { }
+            string inputIncome = Console.ReadLine();
+            float outputIncome;
+            bool parseSuccess = float.TryParse(inputIncome, out outputIncome);
+            if (parseSuccess)
+            {
+                C.MonthlyIncome = (float)Convert.ToDouble(outputIncome);
+            }
+            else
+            {
+                Console.WriteLine("Insira um valor válido em $.");
+                IncomeValidate(C);
+            }                    
         }
 
         public void StatusValidate(Client C)
         {
-            Console.WriteLine("Insira o estado civil (C, S, V ou D): ");           
-            char inputStatus = Convert.ToChar(Console.ReadLine());
-            switch (Char.ToUpper(inputStatus))
+            Console.WriteLine("Insira o estado civil (C, S, V ou D): ");
+            string inputStatus = Console.ReadLine();
+            char outputStatus;
+            bool parseSuccess = char.TryParse(inputStatus, out outputStatus);
+            if (parseSuccess)
             {
-                case 'C':
-                    C.MaritalStatus = 'C';
-                    C.MaritalStatus = _MaritalStatus;
-                    break;
-                case 'S':
-                    C.MaritalStatus = 'S';
-                    C.MaritalStatus = _MaritalStatus;
-                    break;
-                case 'V':
-                    C.MaritalStatus = 'V';
-                    C.MaritalStatus = _MaritalStatus;
-                    break;
-                case 'D':
-                    C.MaritalStatus = 'D';
-                    C.MaritalStatus = _MaritalStatus;
-                    break;
-                default:
-                    Console.WriteLine("Favor insira um estado civil válido (C, S, V ou D).");
-                    StatusValidate(C);
-                    break;
+                Convert.ToChar(outputStatus);
+                switch (char.ToUpper(outputStatus))
+                {
+                    case 'C':
+                        C.MaritalStatus = 'C';
+                        C.MaritalStatus = _MaritalStatus;
+                        break;
+                    case 'S':
+                        C.MaritalStatus = 'S';
+                        C.MaritalStatus = _MaritalStatus;
+                        break;
+                    case 'V':
+                        C.MaritalStatus = 'V';
+                        C.MaritalStatus = _MaritalStatus;
+                        break;
+                    case 'D':
+                        C.MaritalStatus = 'D';
+                        C.MaritalStatus = _MaritalStatus;
+                        break;
+                    default:
+                        Console.WriteLine("Favor insira um estado civil válido (C, S, V ou D).");
+                        StatusValidate(C);
+                        break;
+                }            
+            }
+            else
+            {
+                Console.WriteLine("Favor insira um estado civil válido (C, S, V ou D).");
+                StatusValidate(C);
             }
         }
 
         public void DependentsValidate(Client C)
         {
             Console.WriteLine("Insira o número de dependentes (de 0 a 10): ");
-            C.NumberOfDependents = Convert.ToInt32(Console.ReadLine());
-            NumberOfDependents = C._NumberOfDependents;
-            if (NumberOfDependents >= 0 && NumberOfDependents <= 10)
+            string inputDependents = Console.ReadLine();
+            int outputDependents;
+            bool parseSuccess = int.TryParse(inputDependents, out outputDependents);
+            if (parseSuccess)
             {
-                C.NumberOfDependents = _NumberOfDependents;
+                C.NumberOfDependents = Convert.ToInt32(outputDependents);
+                int n = C.NumberOfDependents;
+                switch (n)
+                {
+                    case >= 0 and <= 10:
+                        C.NumberOfDependents = _NumberOfDependents;
+                        break;
+                    default:
+                        Console.WriteLine("Favor insira um valor válido (entre 0 e 10).");
+                        DependentsValidate(C);
+                        break;
+                }
             }
             else
             {
