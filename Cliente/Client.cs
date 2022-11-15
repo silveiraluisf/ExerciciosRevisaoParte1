@@ -81,7 +81,8 @@
         public void BirthDateValidate(Client C)
         {
             Console.WriteLine("Insira a data de nascimento (DD/MM/AAAA):");
-            DateTime inputBirthDate = Convert.ToDateTime(Console.ReadLine());
+            C.BornDate = Convert.ToDateTime(Console.ReadLine());
+            C.BornDate = _BornDate;
         }
 
         public void IncomeValidate(Client C)

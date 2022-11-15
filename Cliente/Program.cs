@@ -36,7 +36,7 @@
 
             Console.WriteLine("---- RESUMO DO CASTRO ----");
             Console.WriteLine($"Nome: {clientA.Name}");
-            Console.WriteLine($"CPF: {clientA.CPFValidate}");
+            Console.WriteLine($"CPF: {clientA.CPF}");
             Console.WriteLine($"Data de nascimento: {clientA.BornDate}");
             Console.WriteLine($"Renda mensal: {clientA.MonthlyIncome}");
             Console.WriteLine($"Estado civil: {clientA.MaritalStatus}");
