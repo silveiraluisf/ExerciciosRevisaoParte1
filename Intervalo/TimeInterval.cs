@@ -8,12 +8,12 @@
         public DateTime InicialDate
         {
             get { return _I; }
-            set { _I = value; }
+            private set { _I = value; }
         }
 
         public DateTime FinalDate { 
             get { return _F; }
-            set
+            private set
             {
                 if (value >= _I)
                     _F = value;

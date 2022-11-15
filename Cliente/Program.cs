@@ -1,4 +1,6 @@
-﻿namespace Cliente
+﻿using Microsoft.VisualBasic;
+
+namespace Cliente
 {
     public class Program
     {
@@ -15,11 +17,11 @@
             Console.WriteLine("");
 
             clientA.CPFValidate(clientA);
-            Console.WriteLine($"O CPF {clientA.CPF} foi cadastrado.");
+            Console.WriteLine($"O CPF {clientA.CPF.ToString("00000000000")} foi cadastrado.");
             Console.WriteLine("");
 
             clientA.BirthDateValidate(clientA);  
-            Console.WriteLine($"A data de nascimento {clientA.BornDate} foi cadastrada.");
+            Console.WriteLine($"A data de nascimento {clientA.BornDate.ToString("dd/MM/yyyy")} foi cadastrada.");
             Console.WriteLine("");
 
             clientA.IncomeValidate(clientA);    
@@ -36,9 +38,9 @@
 
             Console.WriteLine("---- RESUMO DO CADASTRO ----");
             Console.WriteLine($"Nome: {clientA.Name}");
-            Console.WriteLine($"CPF: {clientA.CPF}");
-            Console.WriteLine($"Data de nascimento: {clientA.BornDate}");
-            Console.WriteLine($"Renda mensal: {clientA.MonthlyIncome}");
+            Console.WriteLine($"CPF: {clientA.CPF.ToString("00000000000")}");
+            Console.WriteLine($"Data de nascimento: {clientA.BornDate.ToString("dd/MM/yyyy")}");
+            Console.WriteLine($"Renda mensal: {clientA.MonthlyIncome} $");
             Console.WriteLine($"Estado civil: {clientA.MaritalStatus}");
             Console.WriteLine($"Número de dependentes: {clientA.NumberOfDependents}");
         }

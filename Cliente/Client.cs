@@ -74,7 +74,8 @@ namespace Cliente
                     bool parseSuccess = long.TryParse(inputCPF, out outputCPF);
                     if (parseSuccess)
                     {
-                        CPF = Convert.ToInt64(inputCPF);
+                        //CPF = Convert.ToInt64(inputCPF);
+                        CPF = outputCPF;
                         C.CPF = _CPF;
                     }
                     else
