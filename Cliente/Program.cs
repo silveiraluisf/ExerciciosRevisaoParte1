@@ -34,7 +34,7 @@
             Console.WriteLine($"O(s) {clientA.NumberOfDependents} dependente(s) foi(ram) cadastrado(s).");
             Console.WriteLine("");
 
-            Console.WriteLine("---- RESUMO DO CASTRO ----");
+            Console.WriteLine("---- RESUMO DO CADASTRO ----");
             Console.WriteLine($"Nome: {clientA.Name}");
             Console.WriteLine($"CPF: {clientA.CPF}");
             Console.WriteLine($"Data de nascimento: {clientA.BornDate}");

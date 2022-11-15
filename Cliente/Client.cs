@@ -1,4 +1,4 @@
-﻿using Microsoft.VisualBasic;
+﻿using Intervalo;
 
 namespace Cliente
 {
@@ -93,8 +93,31 @@ namespace Cliente
         public void BirthDateValidate(Client C)
         {
             Console.WriteLine("Insira a data de nascimento (DD/MM/AAAA):");
-            C.BornDate = Convert.ToDateTime(Console.ReadLine());
-            C.BornDate = _BornDate;
+            string inputDate = Console.ReadLine();
+            DateTime outputDate;
+            DateTime now= DateTime.Now;
+            TimeSpan eighteenYears= new TimeSpan(6574,0,0,0);
+            bool parseSuccess = DateTime.TryParse(inputDate, out outputDate);
+            if (parseSuccess)
+            {
+                C.BornDate = Convert.ToDateTime(outputDate);
+                TimeInterval timeInterval= new(outputDate, now);
+                if (timeInterval.Duration > eighteenYears)
+                {
+                    C.BornDate = _BornDate;
+                }
+                else
+                {
+                    Console.WriteLine("O cliente deve ter pelo menos 18 anos!");
+                    BirthDateValidate(C);
+                }              
+            }
+            else
+            {
+                Console.WriteLine("Favor insira uma data no formato DD,MM,AAAA. ");
+                BirthDateValidate(C);
+            }
+            
         }
 
         public void IncomeValidate(Client C)
